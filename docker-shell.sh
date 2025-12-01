@@ -17,6 +17,6 @@ docker build -t $IMAGE_NAME -f Dockerfile .
 docker run --rm --name $IMAGE_NAME -ti \
 -v "$BASE_DIR":/app \
 -p 9000:9000 \
--e DEV=1 \
+-e DEV=0 \
 --network hw3-app-network \
 $IMAGE_NAME

@@ -12,11 +12,11 @@ source /home/app/.venv/bin/activate
 
 # Run the api/service.py file with the instantiated app FastAPI
 uvicorn_server() {
-    uvicorn api.service:app --host 0.0.0.0 --port 9000 --log-level debug --reload --reload-dir api/ "$@"
+    uvicorn api.service:api_app --host 0.0.0.0 --port 9000 --log-level debug --reload --reload-dir api/ "$@"
 }
 
 uvicorn_server_production() {
-    uv run uvicorn api.service:app --host 0.0.0.0 --port 9000 --lifespan on
+    uv run uvicorn api.service:api_app --host 0.0.0.0 --port 9000 --lifespan on
 }
 
 export -f uvicorn_server

@@ -10,15 +10,6 @@ ROOT_PATH = os.getenv("ROOT_PATH", "")
 # Setup FastAPI app
 api_app = FastAPI(title="API Server", description="API Server", version="v1")
 
-# Enable CORSMiddleware
-api_app.add_middleware(
-    CORSMiddleware,
-    allow_credentials=False,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 # Routes
 @api_app.get("/q1")
 async def sum_sqrt(x: float, y: float):
